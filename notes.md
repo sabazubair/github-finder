@@ -60,4 +60,7 @@
 2. view github's api documentation
 3. "by default, all requests to https://api.github.com/ receive v3 of the REST API data"
 4. open in firefox browser > hit "raw data" to view a possible response
-5.
+
+<!-- Left To Do -->
+
+- keyup: not a fan

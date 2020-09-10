@@ -15,28 +15,24 @@ $(document).ready(function () {
         client_secret: "dd4452c7035053dcccf08db78e1d36a8e02c9973",
       },
     }).done(function (user) {
-      // console.log(user);
+      console.log(user);
       $("#profile").append(`
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem; margin: 3px 3px;">
           <img src="${user.avatar_url}" class="card-img-top" alt="thumbnail">
           <div class="card-body">
-            <h5 class="card-title">${user.name}</h5>
+            <h5 class="card-title">${user.login}</h5>
             <h6>Company: ${user.company}</h6>
             <a target="_blank" class="btn btn-primary btn-block" href="${user.html_url}">View Profile</a>
-            <p class="card-text">${user.bio}</p>
+            <p class="card-text" style="margin-top: 0.5rem";>${user.bio}</p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Public Repos: ${user.public_repos}</li>
-            <li class="list-group-item">Public Gists: ${user.public_gists}</li>
-            <li class="list-group-item">Followers: ${user.followers}</li>
-            <li class="list-group-item">Following: ${user.following}</li>
+            <li class="list-group-item" style="display:flex; flex-direction: row; justify-content:space-between;"><span>Public Repos:</span><span>${user.public_repos}</span></li>
+            <li class="list-group-item" style="display:flex; flex-direction: row; justify-content:space-between;"><span>Public Gists:</span><span>${user.public_gists}</span></li>
+            <li class="list-group-item" style="display:flex; flex-direction: row; justify-content:space-between;"><span>Followers:</span> ${user.followers}</span></li>
+            <li class="list-group-item" style="display:flex; flex-direction: row; justify-content:space-between;"><span>Following:</span> ${user.following}</span></li>
           </ul>
         </div>
       `);
     });
   });
 });
-
-// CSS changes
-// - row + columns to be implemented
-// - remove title from numbers
